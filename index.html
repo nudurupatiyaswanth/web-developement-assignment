@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Online Book Store – Modern</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="showPage('home')">
+
+<!-- HOME -->
+<section id="home" class="page">
+  <h1>📘 Online Book Store</h1>
+  <p>Modern • Fast • Simple</p>
+  <div class="nav">
+    <button class="btn" onclick="showPage('login')">Login</button>
+    <button class="btn" onclick="showPage('register')">Register</button>
+    <button class="btn" onclick="showPage('catalogue')">Catalogue</button>
+    <button class="btn" onclick="showPage('cart')">Cart</button>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="page">
+  <h1>Login</h1>
+  <div class="card">
+    <input id="userid" placeholder="User ID">
+    <input id="password" type="password" placeholder="Password">
+    <button class="btn" onclick="login()">Login</button>
+  </div>
+  <div class="nav"><button class="btn" onclick="showPage('home')">Back</button></div>
+</section>
+
+<!-- REGISTER -->
+<section id="register" class="page">
+  <h1>Register</h1>
+  <div class="card">
+    <input placeholder="Full Name">
+    <input placeholder="Age">
+    <input placeholder="Contact">
+    <input placeholder="Email">
+    <textarea placeholder="Address"></textarea>
+    <button class="btn" onclick="registerMember()">Submit</button>
+  </div>
+  <div class="nav"><button class="btn" onclick="showPage('home')">Back</button></div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="page">
+  <h1>Book Catalogue</h1>
+  <div class="grid">
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg">
+      <h3>The Alchemist</h3>
+      <p>$15</p>
+      <button class="btn" onclick="addToCart('The Alchemist',15)">Add</button>
+    </div>
+
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/81wgcld4wxL.jpg">
+      <h3>Atomic Habits</h3>
+      <p>$18</p>
+      <button class="btn" onclick="addToCart('Atomic Habits',18)">Add</button>
+    </div>
+
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/81QR3Lz0kPL.jpg">
+      <h3>Wings of Fire</h3>
+      <p>$12</p>
+      <button class="btn" onclick="addToCart('Wings of Fire',12)">Add</button>
+    </div>
+  </div>
+  <div class="nav"><button class="btn" onclick="showPage('home')">Back</button></div>
+</section>
+
+<!-- CART -->
+<section id="cart" class="page">
+  <h1>Your Cart</h1>
+  <table id="cartTable"></table>
+  <h2 id="total"></h2>
+  <div class="nav">
+    <button class="btn" onclick="showPage('payment')">Pay</button>
+    <button class="btn" onclick="showPage('home')">Back</button>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment" class="page">
+  <h1>Payment</h1>
+  <p>Scan QR & Pay</p>
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay">
+  </div>
+  <div class="nav">
+    <button class="btn" onclick="alert('Payment Successful!')">Confirm</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
